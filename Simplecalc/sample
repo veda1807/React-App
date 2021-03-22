@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <title>Calculator</title>
+        <link href="jsCalc.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <h1>SIMPLE CALCULATOR</h1>
+        <div class="container-fluid">
+            <div class="d-flex row">
+                <div id="simple" style="padding: 100px;background-color: blue; width: 50%; height: 990px">
+
+                </div>
+                <div  id="BMI" style="padding: 100px;background-color: black; width:50%;">
+
+                </div>
+            </div>
+        </div>
+        <div id="app"></div>
+        <script type="text/babel">
+        class Calc extends React.Component{
+            render(){
+                return(
+                    <h1>   </h1>
+
+                );
+                    
+                    
+                
+            }
+        }
+        ReactDOM.render(<Calc />, document.querySelector("#app"));
+        
+        </script>
+    </body>
+
+</html>
