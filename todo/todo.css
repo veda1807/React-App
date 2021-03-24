@@ -1,0 +1,19 @@
+.th{
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+h2{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+#app{
+    text-align: center;
+    margin-top: 10%;
+    color: ivory;
+}
+#root{
+    text-align: center;
+}
+#abc{
+    text-align: center;
+    margin-left: 200%;
+}

@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="todo.css">
+   
+    <style>
+        body{
+            background-color: #330000;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23D18'/%3E%3Cstop offset='1' stop-color='%23330000'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.21'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+        }
+        #size{
+            margin-left:30%;
+            width:40%;
+            background-color:lightcoral
+        }
+    </style>
+   
+   
+   
+    </head>
+    <body>
+    <div id="data" style="padding: 2%;"></div>
+    
+
+    <script type="text/babel">
+        class Lappy extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    tasks:[],
+                    input:""
+                    
+                };
+            }
+            
+            render(){
+              
+                return(
+                    
+                    
+
+                <div id="app">
+                     <h1>Tasks</h1> 
+                     <table id="size" class="table table-hover">
+                        <thead id="abc">
+                           <tr>  <th>Todo List</th>  </tr>
+                        </thead>
+                     <tbody>
+                        
+                    {this.state.tasks.map((task,index) => 
+                 <tr key={index}>
+
+                    <td> {task}</td>
+                    <td>
+                    <button value={index} onClick={this.remove_to_do_task.bind(this)}>Delete</button>
+                    </td>
+                    </tr>
+                    )}    
+                   
+                     <div id="root">
+                     <input id="cleartext" onChange={this.handleChange.bind(this)} value={this.state.input}/>
+                     <button onClick={this.addTask.bind(this)} > Add the Task</button>  
+                      
+                     </div>    
+                    </tbody>
+                </table>  
+                <h2> The tasks in Todo list are {this.state.tasks.length}</h2>
+                </div>
+            
+                );
+            }
+
+            remove_to_do_task=(e)=>{
+                var index =e.target.value
+                var tasks_list= this.state.tasks.splice(index, 1);
+                this.setState({tasks: this.state.tasks});
+                
+                
+            }
+
+
+            handleChange=(event)=>{
+                var input=event.target.value;
+
+                this.setState({input:input})
+
+            }
+            addTask=(event)=>{
+                this.setState(state=>({
+                    tasks:[...state.tasks,state.input],  
+                }))
+                var input=event.target.value="";
+                this.setState({input:input})
+               
+
+            }
+            
+            
+        }
+        
+        ReactDOM.render(<Lappy/>, document.querySelector("#data"));
+    
+    </script>
+    </body>
+</html>
