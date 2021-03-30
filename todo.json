@@ -1,4 +1,4 @@
 [
-  {"input":"Hello"},
-  {"input":"Welcome"}
+  {"cleartext":"Hello"},
+  {"cleartext":"Welcome"}
 ]
